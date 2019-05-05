@@ -1,4 +1,4 @@
-// @import 'base';
+@import 'base';
 
 $color-primary: #202b38;
 
@@ -24,7 +24,7 @@ body {
 
   background-size: cover;
   background-position: center center;
-  background-image: url('./img/mountain.jpg');
+  background-image: url('./img/IceCave.jpg');
 
   -webkit-filter: blur(8px);
   -moz-filter: blur(8px);
@@ -32,52 +32,102 @@ body {
   -ms-filter: blur(8px);
   filter: blur(8px);
 
-  opacity: .2;
-
-  // border: 10px solid red;
+  opacity: .12;
 }
 
-.content {
+.display-image {
   position: absolute;
   z-index: 2;
   top: 20px;
   bottom: 20px;
-  left: 50%;
+  right: 20px;
   width: 800px;
-  transform: translateX(-50%);
+  max-width: 100%;
   background-size: cover;
   background-position: center center;
-  background-image: url('./img/mountain.jpg');
+  background-image: url('./img/IceCave.jpg');
+
+  @media (max-width: 800px) {
+    top: 0;
+    bottom: 0;
+  }
 }
 
 .container {
-  display: flex;
-  flex-direction: column-reverse;
-  height: 100%;
-  // border: 5px solid red;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
 }
 
 .text-container {
-  position: fixed;
-  // top: 50vh;
-  flex: 0;
-  width: 450px;
-  padding: 60px;
-  background-color: rgba($color-primary, .8);
-  // border-left: 40px solid $color-primary;
+  position: absolute;
+  // left: -100px;
+  bottom: 50px;
+  // flex: 0;
+  width: 250px;
+  // padding: 60px;
+  background-color: rgba($color-primary, 1);
 
-  h1 {
+  @media (max-width: 800px) {
+    left: 30px;
+  }
+
+  .title {
+    margin-bottom: 20px;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 1;
+    font-size: 36px;
+    line-height: 1.1;
     font-family: 'Playfair Display';
   }
 
-  button {
-    border: 1px solid #fff;
-    text-transform: uppercase;
-    font-size: 12px;
-    // font-weight: 700;
-    letter-spacing: .08em;
+  .image-row {
+    margin-top: 40px;
+    // border: 1px solid green;
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
+
+  .image-list-item {
+    display: inline-block;
+    height: 64px;
+    width: 64px;
+    margin: 15px 10px;
+    // border: 1px solid red;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('./img/RoysPeak.jpg');
+  }
+
+  .image-list-item:nth-of-type(1) {
+    background-image: url('./img/RoysPeak.jpg');
+  }
+  .image-list-item:nth-of-type(2) {
+    background-image: url('./img/CastlePoint.jpg');
+  }
+  .image-list-item:nth-of-type(3) {
+    background-image: url('./img/Kea.jpg');
+  }
+  .image-list-item:nth-of-type(4) {
+    background-image: url('./img/Pukaki.jpg');
+  }
+  .image-list-item:nth-of-type(5) {
+    background-image: url('./img/SoloRock.jpg');
+  }
+  .image-list-item:nth-of-type(6) {
+    background-image: url('./img/IceCave.jpg');
+  }
+
 }
+
+// https://www.etsy.com/listing/684514192/roys-peak-nz?ref=shop_home_active_8
+// https://www.etsy.com/listing/696574201/castle-point-nz?ref=shop_home_active_23
+// https://www.etsy.com/listing/684314576/kea-nz?ref=shop_home_active_14
+// https://www.etsy.com/listing/684511792/pukaki-nz?ref=shop_home_active_4
+// https://www.etsy.com/listing/698372109/solo-rock-nz?ref=shop_home_active_2
+// https://www.etsy.com/listing/682930632/ice-cave-is?ref=shop_home_active_18
