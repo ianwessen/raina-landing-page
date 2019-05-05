@@ -1,0 +1,28 @@
+{
+  "name": "raina",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "scripts": {
+    "watch:scss": "sass -w .:.",
+    "start": "npm run start:dev",
+    "start:dev": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,83 @@
+// @import 'base';
+
+$color-primary: #202b38;
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.4;
+  color: #dbdbdb;
+  background: #202b38;
+  text-rendering: optimizeLegibility; 
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-size: cover;
+  background-position: center center;
+  background-image: url('./img/mountain.jpg');
+
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+
+  opacity: .2;
+
+  // border: 10px solid red;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  width: 800px;
+  transform: translateX(-50%);
+  background-size: cover;
+  background-position: center center;
+  background-image: url('./img/mountain.jpg');
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  // border: 5px solid red;
+}
+
+.text-container {
+  position: fixed;
+  // top: 50vh;
+  flex: 0;
+  width: 450px;
+  padding: 60px;
+  background-color: rgba($color-primary, .8);
+  // border-left: 40px solid $color-primary;
+
+  h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    font-family: 'Playfair Display';
+  }
+
+  button {
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    // font-weight: 700;
+    letter-spacing: .08em;
+  }
+}
