@@ -3,25 +3,28 @@
   <head>
   </head>
   <body>
-    <div class="overlay"></div>
     <div class="container">
-      <div class="display-image"></div>
-      <div class="text-container">
-        <h1 class="title">Raina Wessen Photography</h1>
-        <label class="location">Los Angeles, California</label>
-        <!-- <p>I currently work as a freelance photographer as a way to help pay for my travels.</p> -->
-        <br>
-        <div class="image-row">
-          <div class="image-list-item"></div>
-          <div class="image-list-item"></div>
-          <div class="image-list-item"></div>
-          <div class="image-list-item"></div>
-          <div class="image-list-item"></div>
-          <div class="image-list-item"></div>
-        </div>
-        <!-- <p><a href="https://www.etsy.com/shop/RainaPhotography"><button>Shop Etsy</button></a></p> -->
+      <div class="title-container">
+        <h1 class="title">
+          Raina Wessen <br/> Photography
+        </h1>
+        <p class="subtitle">
+          <label>Current Location</label>
+          Los Angeles, California
+        </p>
+      </div>
+      <div class="film-strip">
+        <div data-photo-id="roysPeak" class="film-strip-frame film-strip-frame-roy"></div>
+        <div data-photo-id="castlePoint" class="film-strip-frame"></div>
+        <div data-photo-id="kea" class="film-strip-frame"></div>
+        <div data-photo-id="pukaki" class="film-strip-frame"></div>
+        <div data-photo-id="soloRock" class="film-strip-frame"></div>
+        <div data-photo-id="iceCave" class="film-strip-frame"></div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
