@@ -1,8 +1,8 @@
 import './style.scss';
 
-$('.film-strip-frame').click(e => {
-    console.log(e.currentTarget.dataset.photoId)
-})
+// $('.film-strip-frame').click(e => {
+//     console.log(e.currentTarget.dataset.photoId)
+// })
 
 const computeFocusThreshold = () => $(window).height() / 3;
 

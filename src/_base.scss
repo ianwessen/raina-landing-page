@@ -1,6 +1,6 @@
 // @charset "UTF-8";
 
-$color-primary: #202b38;
+$color-primary: #fdcb6e;
 
 button, input, textarea {
   transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, box-shadow 0.1s linear, transform 0.1s ease; }
@@ -137,7 +137,7 @@ textarea:disabled {
 
 a {
   text-decoration: none;
-  color: #41adff; }
+  color: $color-primary; }
 
 a:hover {
   text-decoration: underline; }
