@@ -1,6 +1,10 @@
 // @charset "UTF-8";
 
-$color-primary: #fdcb6e;
+$color-primary: #3BABFD;
+
+$breakpoint-large: 1200px;
+$breakpoint-medium: 992px;
+$breakpoint-small: 768px;
 
 button, input, textarea {
   transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, box-shadow 0.1s linear, transform 0.1s ease; }
@@ -24,7 +28,7 @@ h4,
 h5,
 h6,
 strong {
-  color: #ffffff; }
+  color: #333333; }
 
 h1,
 h2,

@@ -1,25 +1,19 @@
 import './style.scss';
 
-// $('.film-strip-frame').click(e => {
-//     console.log(e.currentTarget.dataset.photoId)
-// })
 
-const computeFocusThreshold = () => $(window).height() / 3;
+$(document).ready(() => {
+  console.log('load')
+})
 
-const updateFocus = () => {
-    // $('.film-strip-frame').each((i,frame) => {
-    //     const focusPoint = computeFocusThreshold();
+$('.js-grid-item').click(function () {
+  $('.js-light-box').addClass('light-box--active')
+})
 
-    //     const distanceFromTop = $(frame).offset().top - $(window).scrollTop();
+$('.js-light-box, .js-light-box-close').click(function () {
+  $('.js-light-box').removeClass('light-box--active')
+})
 
-    //     if (distanceFromTop < focusPoint) {
-    //         $(frame).addClass('is-in-focus');
-    //     } else {
-    //         $(frame).removeClass('is-in-focus');
-    //     };
-    // });
-};
-
-const updateFocusThrottled = _.throttle(updateFocus, 200);
-
-$(window).scroll(updateFocusThrottled);
+$('.js-light-box-content').click(function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+})
