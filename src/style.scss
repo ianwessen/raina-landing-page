@@ -1,17 +1,17 @@
-@import 'base';
+@import "base";
 
 body {
   position: relative;
   margin: 0;
   padding: 0;
   height: 100vh;
-  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.4;
-  text-rendering: optimizeLegibility; 
+  text-rendering: optimizeLegibility;
 }
 
 .container {
-  width: 720px;
+  width: 960px;
   max-width: 90%;
   margin: 0 auto;
 }
@@ -20,14 +20,18 @@ body {
   display: flex;
   margin: 60px 0;
 
-  .title-container {
+  .title {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .title {
-    font-size: 18px;
+    &__logo {
+      width: 110px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
   }
 
   .header {
@@ -55,9 +59,32 @@ body {
     padding: 12px 15px;
     color: inherit;
     text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     &:hover {
-      background: #f0f0f0;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  }
+
+  .social-list-link-ig {
+    &:hover {
+      color: #833ab4;
+    }
+  }
+  .social-list-link-etsy {
+    &:hover {
+      color: #d5641c;
+    }
+  }
+  .social-list-link-fb {
+    &:hover {
+      color: #3b5998;
+    }
+  }
+  .social-list-link-flickr {
+    &:hover {
+      color: #ff0084;
     }
   }
 
@@ -67,32 +94,77 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr ) );
-  grid-auto-rows: 100px;
-}
+  position: relative;
+  min-height: 100px;
+  text-align: center;
 
-.grid-item {
-  background: #f0f0f0;
-  border: 1px solid #cccccc;
-  box-sizing: border-box;
-  cursor: pointer;
-
-  &:hover {
-    background: #dfdfdf;
-    border-color: #999999;
+  &.js-grid-loading {
+    .grid-item {
+      opacity: 0;
+    }
   }
 }
 
-.grid-item--2x { 
-  grid-row-end: span 2;
+.grid-loader {
+  $loader-color: #ccc;
+
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+
+  &__container {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+
+  &__quadrant {
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid $loader-color;
+    box-sizing: border-box;
+    border-radius: 50%;
+    animation: grid-loading-animation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $loader-color transparent transparent transparent;
+
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
 }
-.grid-item--3x { 
-  grid-row-end: span 3;
+
+@keyframes grid-loading-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.grid-item--3x { 
-  grid-row-end: span 4;
+
+.grid-item {
+  margin-bottom: 30px;
+  max-width: 300px;
+  background: #f0f0f0;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 }
 
 .footer {
@@ -109,9 +181,8 @@ body {
   pointer-events: none;
   opacity: 0;
   transform-origin: center top;
-  transform: translateY(15px) scale(.95);
-  transition: .2s opacity ease,
-              .2s transform ease;
+  transform: translateY(15px) scale(0.95);
+  transition: 0.2s opacity ease, 0.2s transform ease;
 
   &--active {
     pointer-events: auto;
@@ -123,7 +194,6 @@ body {
   &__content {
     position: relative;
     margin-top: 60px;
-    border: 1px solid red;
   }
 
   &__close {
@@ -131,7 +201,7 @@ body {
     top: 10px;
     right: 10px;
     font-size: 36px;
-    opacity: .25;
+    opacity: 0.25;
     cursor: pointer;
 
     &:hover {
@@ -140,15 +210,12 @@ body {
   }
 
   &__photo-container {
-
   }
 
   &__photo {
     display: block;
-    height: 600px;
-    width: 400px;
-    background: #f0f0f0;
-    border: 1px solid #cccccc;
+    max-height: 600px;
+    max-width: 600px;
+    // background: #f0f0f0;
   }
-
 }
