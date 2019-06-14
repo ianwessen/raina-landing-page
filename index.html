@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" http-equiv="Accept-CH" content="DPR">
   <head>
     <link
       rel="stylesheet"
@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="no-scroll">
     <div class="container">
       <div class="hero">
         <div class="title">
@@ -59,12 +59,12 @@
       </div>
 
       <div class="grid js-grid js-grid-loading">
-        <div class="js-grid-loader grid-loader">
-          <div class="grid-loader__container">
-            <div class="grid-loader__quadrant"></div>
-            <div class="grid-loader__quadrant"></div>
-            <div class="grid-loader__quadrant"></div>
-            <div class="grid-loader__quadrant"></div>
+        <div class="js-grid-loader loader">
+          <div class="loader__container">
+            <div class="loader__quadrant"></div>
+            <div class="loader__quadrant"></div>
+            <div class="loader__quadrant"></div>
+            <div class="loader__quadrant"></div>
           </div>
         </div>
       </div>
@@ -75,17 +75,36 @@
     </div>
 
     <div class="js-light-box light-box">
-      <div class="js-light-box-content light-box__content container">
+      <div class="js-light-box-content light-box__content">
         <div class="js-light-box-close light-box__close">
-          <i class="fa fa-times"></i>
+          <img class="light-box__close-icon" src="src/img/close.svg" />
         </div>
 
-        <figure class="light-box__photo-container">
-          <img class="light-box__photo js-light-box-photo" src="" alt="" />
-          <figcaption
-            class="light-box__description js-light-box-caption"
-          ></figcaption>
-        </figure>
+        <div class="container">
+          <figure class="light-box__figure js-light-box-figure">
+            <div class="light-box__photo-wrapper">
+              <div class="js-light-box-loader loader">
+                <div class="loader__container">
+                  <div class="loader__quadrant"></div>
+                  <div class="loader__quadrant"></div>
+                  <div class="loader__quadrant"></div>
+                  <div class="loader__quadrant"></div>
+                </div>
+              </div>
+              <img class="light-box__photo js-light-box-photo" src="" alt="" />
+            </div>
+
+            <figcaption class="light-box__photo-caption">
+              <p class="js-light-box-caption"></p>
+              <a
+                href=""
+                target="_blank"
+                class="light-box__photo-etsy-link js-photo-etsy-link"
+                >Shop on Etsy
+              </a>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
 
