@@ -4,7 +4,7 @@ const images = [
   {
     alt: "",
     description:
-      "This photo was taken inside of an ice cave in Vatnajökull, Iceland. There are a few different ice caves you can experience while in Iceland, and this one was inside Treasure Island.",
+      `This photo was taken inside of an ice cave in Vatnajökull, Iceland. There are a few different ice caves you can experience while in Iceland, and this one was inside Treasure Island.`,
     etsyLink: "https://www.etsy.com/listing/682930632/ice-cave-is",
     isPortrait: true,
     key: "iceCave",
@@ -184,7 +184,8 @@ $(document).ready(() => {
     $(".js-grid").masonry({
       columnWidth: 300,
       gutter: 30,
-      itemSelector: ".grid-item"
+      itemSelector: ".grid-item",
+      isFitWidth: true
     });
   }, 2000);
 });
@@ -195,7 +196,7 @@ function handleGridItemClick(event) {
   $(".js-light-box-photo").attr("src", imageLightboxPrefix + image.url);
   $(".js-light-box-photo").attr("alt", image.alt);
   $(".js-photo-etsy-link").attr("href", image.etsyLink);
-  $(".js-light-box-caption").text(image.description);
+  $(".js-light-box-caption").html(image.description);
   $(".js-light-box").addClass("light-box--active");
   if (image.isPortrait) {
     $(".js-light-box-figure").addClass("light-box__figure--portrait");
